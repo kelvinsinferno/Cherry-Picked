@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
-    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Cherry-Picked</title>
     
 </head>
@@ -17,11 +19,15 @@
 
 
 <h3 class="mealIngredient">Meal | Ingredient</h3>
-<textarea class="mealText" placeholder="What are we cooking with?"></textarea>
+<textarea class="mealText" id="mealText" placeholder="What are we cooking with?"></textarea>
+<a class="waves-effect waves-light btn" id="mealBtn"><i class="material-icons">search</i></a>
+<a class="waves-effect waves-light btn"><i class="material-icons" id="mealUnfold">unfold_more</i></a>
 
 <h3 class="drink">Drink | Ingredient</h3>
-<textarea class="drinkText" placeholder="What are we drinking?"></textarea>
-    
+<textarea class="drinkText" id="drinkText" placeholder="What are we drinking?"></textarea>
+<a class="waves-effect waves-light btn" id="drinkBtn"><i class="material-icons">search</i></a>
+<a class="waves-effect waves-light btn"><i class="material-icons" id="mealUnfold">unfold_more</i></a>
+
     <script src="./assets/js/style.js"></script>
 </body>
 </html>
