@@ -2,7 +2,11 @@ var mealText = document.getElementById("mealText");
 var mealBtn = document.getElementById("mealBtn");
 var drinkText = document.getElementById("drinkText");
 var drinkBtn = document.getElementById("drinkBtn");
+var mealUnfold = document.getElementById("mealUnfold");
+var drinkUnfold = document.getElementById("drinkUnfold");
 
+
+//meal 
 mealBtn.addEventListener('click', (event) => {
     event.preventDefault();
     var mealString = mealText.value
@@ -22,7 +26,15 @@ mealBtn.addEventListener('click', (event) => {
         .catch(err => console.error(err));
 });
 
+mealUnfold.addEventListener('click', (event) => {
+    function mealFold() {
+        // Element.appendChild
+    }
+    
+    //collapsable goes here?
+})
 
+//Cocktail
 drinkBtn.addEventListener('click', (event) => {
     event.preventDefault();
     var drinkString = drinkText.value
