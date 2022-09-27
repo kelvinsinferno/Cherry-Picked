@@ -1,0 +1,46 @@
+*{
+    background-color: none;
+
+}
+
+.name{
+    
+    min-height: 50vh;
+    width: 100%;
+    color: black;
+    
+
+}
+.mealIngredient{
+  display: flex;
+  align-items: center;
+  padding: 10px 5%;
+  color: black;
+  
+}
+.mealText{
+ 
+    align-items: center;
+    padding: 10px;
+}
+
+
+.material-icons{
+    color: black;
+    
+}
+.drink{
+    display: flex;
+    align-items: center;
+    padding: 10px 5%;
+    color: black
+
+
+}
+
+.drinkText{
+    
+    align-items: center;
+    padding: 10px;
+    
+}
