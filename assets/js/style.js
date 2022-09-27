@@ -4,14 +4,15 @@ var drinkText = document.getElementById("drinkText");
 var drinkBtn = document.getElementById("drinkBtn");
 var mealUnfold = document.getElementById("mealUnfold");
 var drinkUnfold = document.getElementById("drinkUnfold");
+var mealBody = document.getElementById("mealSection")
 
 
 //meal 
-mealBtn.addEventListener('click', (event) => {
-    event.preventDefault();
+function getMeal() {
+    
     var mealString = mealText.value
     console.log(mealString)
-
+    
     const options = {
         method: 'GET',
         headers: {
@@ -19,12 +20,32 @@ mealBtn.addEventListener('click', (event) => {
             'X-RapidAPI-Host': 'recipe-by-api-ninjas.p.rapidapi.com'
         }
     };
-    
     fetch(`https://recipe-by-api-ninjas.p.rapidapi.com/v1/recipe?query=${mealString}`, options)
-        .then(response => response.json())
-        .then(response => console.log(response))
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data)
+        for (var i = 0; i < data.length; i++) {
+            var createRecipeRow = document.createElement('tr');
+            var recipeData = document.createElement('td')
+            var title = document.createElement('p');
+            title.textContent = data[i].title;
+            
+            recipeData.appendChild(title);
+            createRecipeRow.appendChild(recipeData);
+            mealBody.appendChild(createRecipeRow);
+        }
+        
+    })
+        
         .catch(err => console.error(err));
-});
+        
+        console.log("hello")
+    }    
+
+mealBtn.addEventListener('click', getMeal)
+
 
 mealUnfold.addEventListener('click', (event) => {
     function mealFold() {
