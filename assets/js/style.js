@@ -5,6 +5,7 @@ var drinkBtn = document.getElementById("drinkBtn");
 var mealUnfold = document.getElementById("mealUnfold");
 var drinkUnfold = document.getElementById("drinkUnfold");
 var mealBody = document.getElementById("mealSection")
+var drinkBody = document.getElementById("drinkSection")
 
 
 //meal 
