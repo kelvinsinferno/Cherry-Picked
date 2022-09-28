@@ -1,15 +1,14 @@
 *{
+    
     background-color: none;
-
+    font-family: sans-serif;
+    
 }
-
-.name{
+h1{
+    text-align: center;
+    color: red;
+    padding: 20px;
     
-    min-height: 50vh;
-    width: 100%;
-    color: black;
-    
-
 }
 .mealIngredient{
   display: flex;
@@ -17,11 +16,13 @@
   padding: 10px 5%;
   color: black;
   
+  
 }
 .mealText{
  
     align-items: center;
     padding: 10px;
+    
 }
 
 
@@ -30,7 +31,7 @@
     
 }
 .drink{
-    display: flex;
+    
     align-items: center;
     padding: 10px 5%;
     color: black
