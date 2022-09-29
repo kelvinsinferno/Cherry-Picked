@@ -104,3 +104,11 @@ function getCocktail() {
   
   drinkBtn.addEventListener("click", getCocktail);
 
+//drinkBody eventListener
+drinkBody.addEventListener('click', (event) => {
+    const drinkChoice = event.target.nodeName === 'BUTTON';
+    if (!drinkChoice) {
+        return;
+    }
+    console.dir(event.target.id);
+})
