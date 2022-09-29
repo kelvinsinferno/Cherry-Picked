@@ -6,7 +6,7 @@ var mealUnfold = document.getElementById("mealUnfold");
 var drinkUnfold = document.getElementById("drinkUnfold");
 var mealBody = document.getElementById("mealSection")
 var drinkBody = document.getElementById("drinkSection")
-
+// var savedbtn
 
 //meal 
 function getMeal() {
@@ -30,7 +30,8 @@ function getMeal() {
         for (var i = 0; i < data.length; i++) {
             var createRecipeRow = document.createElement('tr');
             var recipeData = document.createElement('td')
-            var title = document.createElement("button");
+            var title = document.createElement('button');
+
             title.textContent = data[i].title;
             
             recipeData.appendChild(title);
@@ -47,6 +48,14 @@ function getMeal() {
 
 mealBtn.addEventListener('click', getMeal)
 
+//mealBody eventListener
+mealBody.addEventListener('click', (event) => {
+    const mealChoice = event.target.nodeName === 'BUTTON';
+    if (!mealChoice) {
+        return;
+    }
+    console.dir(event.target.id);
+})
 
 mealUnfold.addEventListener('click', (event) => {
     function mealFold() {
@@ -80,7 +89,8 @@ function getCocktail() {
         for (var i = 0; i < data.length; i++) {
           var createDrinkRow = document.createElement("tr");
           var drinkData = document.createElement("td");
-          var name = document.createElement("button");
+          var name = document.createElement("button);
+
           name.textContent = data[i].name;
           name.btn = data[i].name;
   
@@ -96,3 +106,12 @@ function getCocktail() {
   }
   
   drinkBtn.addEventListener("click", getCocktail);
+
+//drinkBody eventListener
+drinkBody.addEventListener('click', (event) => {
+    const drinkChoice = event.target.nodeName === 'BUTTON';
+    if (!drinkChoice) {
+        return;
+    }
+    console.dir(event.target.id);
+})
