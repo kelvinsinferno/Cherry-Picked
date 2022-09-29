@@ -1,0 +1,47 @@
+*{
+    
+    background-color: none;
+    font-family: sans-serif;
+    
+}
+h1{
+    text-align: center;
+    color: black;
+    padding: 20px;
+    
+}
+.mealIngredient{
+  display: flex;
+  align-items: center;
+  padding: 10px 5%;
+  color: black;
+  
+  
+}
+.mealText{
+ 
+    align-items: center;
+    padding: 10px;
+    
+}
+
+
+.material-icons{
+    color: black;
+    
+}
+.drink{
+    
+    align-items: center;
+    padding: 10px 5%;
+    color: black
+
+
+}
+
+.drinkText{
+    
+    align-items: center;
+    padding: 10px;
+    
+}
