@@ -31,6 +31,7 @@ function getMeal() {
             var createRecipeRow = document.createElement('tr');
             var recipeData = document.createElement('td')
             var title = document.createElement('button');
+
             title.textContent = data[i].title;
             
             recipeData.appendChild(title);
@@ -89,7 +90,9 @@ function getCocktail() {
           var createDrinkRow = document.createElement("tr");
           var drinkData = document.createElement("td");
           var name = document.createElement("button);
+
           name.textContent = data[i].name;
+          name.btn = data[i].name;
   
           drinkData.appendChild(name);
           createDrinkRow.appendChild(drinkData);
