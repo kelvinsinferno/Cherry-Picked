@@ -57,13 +57,13 @@ mealBody.addEventListener('click', (event) => {
     console.dir(event.target.id);
 })
 
-mealUnfold.addEventListener('click', (event) => {
-    function mealFold() {
-        // Element.appendChild
-    }
+// mealUnfold.addEventListener('click', (event) => {
+//     function mealFold() {
+//         // Element.appendChild
+//     }
     
-    //collapsable goes here?
-})
+//     //collapsable goes here?
+// })
 
 //Cocktail
 function getCocktail() {
@@ -89,7 +89,7 @@ function getCocktail() {
         for (var i = 0; i < data.length; i++) {
           var createDrinkRow = document.createElement("tr");
           var drinkData = document.createElement("td");
-          var name = document.createElement("button);
+          var name = document.createElement("button");
 
           name.textContent = data[i].name;
           name.btn = data[i].name;
