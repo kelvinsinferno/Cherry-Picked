@@ -1,37 +1,52 @@
-*{
+* {
     
     background-color: none;
     font-family: sans-serif;
-    
+    background-color: antiquewhite;
+
 }
-h1{
+
+h1 {
     text-align: center;
     color: black;
     padding: 20px;
+}
+
+
+textArea {
+    
+    width: 46%;
+    height: 10vh;
+}
+
+.btn {
+    padding: 5px 400px;
+    border: none;
+    display: flex;
+    background-color:blue;
+    width: 40%;
+    height: 5%;
+
+}
+.btn:hover{
+    transform: scale(1.05);
     
 }
-.mealIngredient{
-  display: flex;
-  align-items: center;
-  padding: 10px 5%;
-  color: black;
-  
-  
+
+.mealIngredient {
+    align-items: center;
+    padding: 5px 5%;
+    color: black;
+
+
 }
-.mealText{
- 
+.mealText {
     align-items: center;
     padding: 10px;
-    
+
 }
 
-
-.material-icons{
-    color: black;
-    
-}
-.drink{
-    
+.drink {
     align-items: center;
     padding: 10px 5%;
     color: black
@@ -39,9 +54,11 @@ h1{
 
 }
 
-.drinkText{
-    
+.drinkText {
     align-items: center;
     padding: 10px;
-    
+}
+
+.material-icons {
+    color: black;
 }
