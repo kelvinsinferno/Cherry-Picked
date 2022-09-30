@@ -2,8 +2,7 @@
     
     background-color: none;
     font-family: sans-serif;
-    background-color: antiquewhite;
-
+    background-color: grey;
 }
 
 h1 {
@@ -14,19 +13,14 @@ h1 {
 
 
 textArea {
-    
-    width: 46%;
-    height: 10vh;
+    width: 95%;
+    height: 20vh;
 }
 
 .btn {
-    padding: 5px 400px;
-    border: none;
-    display: flex;
-    background-color:blue;
-    width: 40%;
-    height: 5%;
-
+   
+    background-color: grey;
+    
 }
 .btn:hover{
     transform: scale(1.05);
@@ -34,7 +28,7 @@ textArea {
 }
 
 .mealIngredient {
-    align-items: center;
+    
     padding: 5px 5%;
     color: black;
 
@@ -43,7 +37,7 @@ textArea {
 .mealText {
     align-items: center;
     padding: 10px;
-
+    background-color: white;
 }
 
 .drink {
@@ -57,8 +51,10 @@ textArea {
 .drinkText {
     align-items: center;
     padding: 10px;
+    background-color: white;
 }
 
 .material-icons {
-    color: black;
+    background-color: grey;
+
 }
