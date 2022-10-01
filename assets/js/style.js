@@ -38,7 +38,7 @@ function getMeal() {
     .then(function (data) {
       console.log(data);
       for (var i = 0; i < data.length; i++) {
-        var createRecipeRow = document.createElement("tr");
+        var createRecipeRow = document.createElement("li");
         var recipeData = document.createElement("td");
         var title = document.createElement("button");
 
