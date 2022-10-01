@@ -10,6 +10,9 @@ h1 {
     color: black;
     padding: 20px;
 }
+h3 {
+    font-size: 30px;
+}
 
 
 textArea {
@@ -28,11 +31,8 @@ textArea {
 }
 
 .mealIngredient {
-    
-    padding: 5px 5%;
+   
     color: black;
-
-
 }
 .mealText {
     align-items: center;
@@ -42,9 +42,7 @@ textArea {
 
 .drink {
     align-items: center;
-    padding: 10px 5%;
     color: black
-
 
 }
 
@@ -56,5 +54,18 @@ textArea {
 
 .material-icons {
     background-color: grey;
+
+}
+/* .col {
+    max-height: ;
+} */
+/* .saved { */
+
+/* } */
+.container {
+    width: 100vw;
+}
+.row {
+    width: 100vw;
 
 }
