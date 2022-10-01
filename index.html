@@ -17,47 +17,50 @@
     <title>Cherry-Picked</title>
   </head>
 
-    <body>
-        <h1 class="name">Cherry-Picked</h1>
+  <body>
+    <h1 class="name">Cherry-Picked</h1>
 
-        <!-- logo will go here -->
-
+    <!-- logo will go here -->
+    <div class="row">
+      <section class="col s6">
         <h3 class="mealIngredient">Meal | Ingredient</h3>
         <div id="mealSection">
-            <textarea
-                class="mealText"
-                id="mealText"
-                placeholder="What are we cooking with?"
-            ></textarea>
-            <a class="waves-effect waves-light btn" id="mealBtn"
-                ><i class="material-icons">search</i></a
-            >
-            <a class="waves-effect waves-light btn"
-                ><i class="material-icons" id="mealAdd">add</i></a
-            >
+          <textarea
+            class="mealText"
+            id="mealText"
+            placeholder="What are we cooking with?"
+          ></textarea>
+          <a class="waves-effect waves-light btn" id="mealBtn"
+            ><i class="material-icons">search</i></a
+          >
+          <a class="waves-effect waves-light btn"
+            ><i class="material-icons" id="mealAdd">add</i></a
+          >
         </div>
-
+      </section>
+      <section class="col s6">
         <h3 class="drink">Drink | Ingredient</h3>
         <div id="drinkSection">
-            <textarea
+          <textarea
             class="drinkText"
             id="drinkText"
             placeholder="What are we drinking?"
-            ></textarea>
-            <a class="waves-effect waves-light btn" id="drinkBtn"
+          ></textarea>
+          <a class="waves-effect waves-light btn" id="drinkBtn"
             ><i class="material-icons">search</i></a
-            >
-            <a class="waves-effect waves-light btn"
-                ><i class="material-icons" id="drinkAdd">add</i></a
-            >
+          >
+          <a class="waves-effect waves-light btn"
+            ><i class="material-icons" id="drinkAdd">add</i></a
+          >
         </div>
+      </section>
+    </div>
 
-        <div class="mealsSaved">
-            <h3>Meals</h3>
-                <ul id="mealList">
-                    
-                </ul>
-        </div>
+    <div class="mealsSaved">
+      <h3>Meals</h3>
+      <ul id="mealList"></ul>
+    </div>
+
 
         <div class="drinksSaved">
             <h3>Drinks</h3>
@@ -67,4 +70,5 @@
         </div>
         <script src="./assets/js/style.js"></script>
     </body>
+
 </html>
