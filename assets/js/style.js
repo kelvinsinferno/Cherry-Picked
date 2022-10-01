@@ -14,8 +14,6 @@ var drinkAddBtn = document.getElementById("drinkAdd");
 var drinklistLi = document.querySelector("#drinkList");
 var drinkList = [];
 
-// var savedbtn
-
 //meal
 function getMeal() {
   var mealString = mealText.value;
@@ -68,7 +66,7 @@ mealBody.addEventListener("click", (event) => {
 
 //Render Meal
 function renderMeal(mealAdd) {
-  console.log(mealAdd);
+//   console.log(mealAdd);
   if (!mealAdd) return;
 
   mealListLi.innerHTML = "";
@@ -103,6 +101,26 @@ mealAddBtn.addEventListener("click", (event) => {
   renderMeal(mealAdd);
   storeMeals();
 });
+
+//Delete list item
+mealListLi.addEventListener("click", function(event) {
+    var melement = event.target;
+  
+    // Checks if element is a button
+    if (melement.matches("button") === true) {
+      // Get its data-index value and remove the todo element from the list
+      var index = melement.parentElement.getAttribute("data-index");
+        mealList.splice(index, 1);
+        mealListLi.removeChild(mealListLi.childNodes[index]);
+
+      // Store updated todos in localStorage, re-render the list
+        storeMeals();
+        renderMeal();
+        
+    }
+  });
+
+
 
 // mealUnfold.addEventListener('click', (event) => {
 //     function mealFold() {
@@ -200,6 +218,25 @@ drinkAddBtn.addEventListener("click", (event) => {
   renderDrinks(drinkAdd);
   storeDrinks();
 });
+
+//Delete item
+drinklistLi.addEventListener("click", function(event) {
+    var delement = event.target;
+  
+    // Checks if element is a button
+    if (delement.matches("button") === true) {
+      // Get its data-index value and remove the todo element from the list
+      var index = delement.parentElement.getAttribute("data-index");
+        drinkList.splice(index, 1);
+        drinklistLi.removeChild(drinklistLi.childNodes[index]);
+
+      // Store updated todos in localStorage, re-render the list
+        storeDrinks();
+        renderMeal();
+        
+    }
+  });
+
 
 //get items from local storage on page load
 function init() {
