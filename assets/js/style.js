@@ -4,7 +4,9 @@ var mealUnfold = document.getElementById("mealUnfold");
 var mealBody = document.getElementById("mealSection");
 var mealAddBtn = document.getElementById("mealAdd");
 var mealListLi = document.querySelector("#mealList");
+var recipeContainer = document.getElementById('recipes')
 var mealList = [];
+var mealTitle = document.getElementById("mealTitle");
 var recipeNames = [];
 
 
@@ -39,14 +41,21 @@ function getMeal() {
     })
     .then(function (data) {
       console.log(data);
+
       // for (var i = 0; i < data.length; i++) {
-        recipeNames.forEach((title) => {
-    
+        recipeNames.forEach((data) => {
+        var rList = recipeNames[i];
         var li = document.createElement("li");
+        li.textContent = rList;
         li.setAttribute('class', 'recipe_title');
-        li.setAttribute('data-title', title);
-        li.textContent = data[i].title;
-        mealBody.appendChild(li);
+        li.setAttribute('data-title', data);
+        li.setAttribute("data-index", i);
+        recipeContainer.appendChild(li);
+      })
+  
+    console.log("hello");
+  });
+  }
       
       
 
@@ -57,13 +66,19 @@ function getMeal() {
         // mealListLi.appendChild(createRecipeRow);
         
       
-    })
-
-  console.log("hello");
-});
-}
 
 mealBtn.addEventListener("click", getMeal);
+
+recipeContainer.addEventListener('click', function (event) {
+  event.preventDefault();
+
+  if (EventTarget.matches('li')) {
+    var getRecipeIngredients = event.target.dataset.ingredients;
+    var getRecipeInstructions = event.target.dataset.instructions;
+    console.log(getRecipeIngredients);
+    console.log(getRecipeInstructions);
+  }
+})
 
 //mealBody eventListener
 mealBody.addEventListener("click", (event) => {
@@ -71,7 +86,9 @@ mealBody.addEventListener("click", (event) => {
   if (!mealChoice) {
     return;
   }
+  
   console.dir(event.target.id);
+  mealTitle.innerHTML(mealChoice)
 });
 
 //Render Meal
