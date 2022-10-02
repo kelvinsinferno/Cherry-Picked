@@ -2,7 +2,7 @@
     
     background-color: none;
     font-family: sans-serif;
-    background-color: grey;
+    background-color: antiquewhite;
 }
 
 h1 {
@@ -68,4 +68,7 @@ textArea {
 .row {
     width: 100vw;
 
+}
+button, input, optgroup, select, textarea {
+    background-color: white;
 }
