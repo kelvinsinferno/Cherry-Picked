@@ -5,6 +5,7 @@ var mealBody = document.getElementById("mealSection");
 var mealAddBtn = document.getElementById("mealAdd");
 var mealListLi = document.querySelector("#mealList");
 var mealList = [];
+var mealTitle = document.getElementById("mealTitle");
 
 var urlResponse = [];
 
@@ -63,7 +64,9 @@ mealBody.addEventListener("click", (event) => {
   if (!mealChoice) {
     return;
   }
+  
   console.dir(event.target.id);
+  mealTitle.innerHTML(mealChoice)
 });
 
 //Render Meal
@@ -253,6 +256,4 @@ function init() {
 }
 
 init();
-
-
 
