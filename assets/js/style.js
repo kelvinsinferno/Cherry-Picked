@@ -122,17 +122,10 @@ mealListLi.addEventListener("click", function(event) {
     }
   });
 
-
-
-// mealUnfold.addEventListener('click', (event) => {
-//     function mealFold() {
-//         // Element.appendChild
-//     }
-
+//collapsble
 document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.collapsible');
-  var instances = M.Collapsible.init(elems, options);
-  var instance = M.Collapsible.getInstance(elem);
+  var elems = document.querySelectorAll('.collapsible.expandable');
+  var instances = M.Collapsible.init(elems, { accordion: false });
 });
 
 
