@@ -39,23 +39,25 @@ function getMeal() {
     .then(function (response) {
       return response.json();
     })
-    .then(function (data) {
-      console.log(data);
+    .then(function (recipes) {
+      console.log(recipes);
+
+      localStorage.setItem("recipeResults", JSON.stringify(recipes));
 
       // for (var i = 0; i < data.length; i++) {
-        recipeNames.forEach((data) => {
-        var rList = recipeNames[i];
+      recipes.forEach((recipe, index) => {
+        var title = recipe.title;
         var li = document.createElement("li");
-        li.textContent = rList;
-        li.setAttribute('class', 'recipe_title');
-        li.setAttribute('data-title', data);
-        li.setAttribute("data-index", i);
+        li.textContent = title;
+        li.setAttribute("class", "recipe_title");
+        li.setAttribute("data-title", title);
+        li.setAttribute("data-index", index);
         recipeContainer.appendChild(li);
-      })
-  
-    console.log("hello");
-  });
-  }
+      });
+
+      console.log("hello");
+    });
+}
       
       
 
@@ -69,16 +71,21 @@ function getMeal() {
 
 mealBtn.addEventListener("click", getMeal);
 
-recipeContainer.addEventListener('click', function (event) {
+recipeContainer.addEventListener("click", function (event) {
   event.preventDefault();
 
-  if (EventTarget.matches('li')) {
-    var getRecipeIngredients = event.target.dataset.ingredients;
-    var getRecipeInstructions = event.target.dataset.instructions;
-    console.log(getRecipeIngredients);
-    console.log(getRecipeInstructions);
+  if (event.target.matches("li")) {
+    var getStorage = localStorage.getItem("recipeResults");
+    if (getStorage) {
+      var recipes = JSON.parse(getStorage);
+      var getIndex = event.target.dataset.index;
+      var getRecipeIngredients = recipes[getIndex].ingredients;
+      var getRecipeInstructions = recipes[getIndex].instructions;
+      console.log(getRecipeIngredients);
+      console.log(getRecipeInstructions);
+    }
   }
-})
+});
 
 //mealBody eventListener
 mealBody.addEventListener("click", (event) => {
