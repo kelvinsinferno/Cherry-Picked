@@ -24,7 +24,8 @@ h3 {
 
 textArea {
     width: 95%;
-    height: 20vh;
+    height: 5.8vh;
+    resize: none;
 }
 
 .btn {
@@ -34,6 +35,7 @@ textArea {
 }
 .btn:hover{
     transform: scale(1.05);
+    background-color: red;
     
 }
 
@@ -61,7 +63,10 @@ textArea {
 
 .material-icons {
     background-color: black;
+}
 
+.material-icons:hover {
+    background-color: red;
 }
 /* .col {
     max-height: ;
@@ -81,4 +86,10 @@ button, input, optgroup, select, textarea {
 }
 .collapsible-header i {
     background-color: white;
+
+}
+
+.collapsible {
+    width: 95%;
+    border: solid 1px black;
 }
