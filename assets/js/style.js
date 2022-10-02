@@ -6,6 +6,8 @@ var mealAddBtn = document.getElementById("mealAdd");
 var mealListLi = document.querySelector("#mealList");
 var mealList = [];
 
+var urlResponse = [];
+
 var drinkText = document.getElementById("drinkText");
 var drinkBtn = document.getElementById("drinkBtn");
 var drinkUnfold = document.getElementById("drinkUnfold");
