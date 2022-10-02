@@ -41,6 +41,7 @@ function getMeal() {
         var createRecipeRow = document.createElement("li");
         var recipeData = document.createElement("td");
         var title = document.createElement("button");
+        element.setAttribute("data-title", "title");
 
         title.textContent = data[i].title;
 
