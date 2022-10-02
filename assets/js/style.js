@@ -6,6 +6,7 @@ var mealAddBtn = document.getElementById("mealAdd");
 var mealListLi = document.querySelector("#mealList");
 var recipeContainer = document.getElementById('recipes')
 var mealList = [];
+var mealTitle = document.getElementById("mealTitle");
 var recipeNames = [];
 
 
@@ -85,7 +86,9 @@ mealBody.addEventListener("click", (event) => {
   if (!mealChoice) {
     return;
   }
+  
   console.dir(event.target.id);
+  mealTitle.innerHTML(mealChoice)
 });
 
 //Render Meal
