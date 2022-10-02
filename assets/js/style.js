@@ -5,6 +5,8 @@ var mealBody = document.getElementById("mealSection");
 var mealAddBtn = document.getElementById("mealAdd");
 var mealListLi = document.querySelector("#mealList");
 var mealList = [];
+var recipeNames = [];
+
 
 var urlResponse = [];
 
@@ -37,23 +39,28 @@ function getMeal() {
     })
     .then(function (data) {
       console.log(data);
-      for (var i = 0; i < data.length; i++) {
-        var createRecipeRow = document.createElement("li");
-        var recipeData = document.createElement("td");
-        var title = document.createElement("button");
-        element.setAttribute("data-title", "title");
+      // for (var i = 0; i < data.length; i++) {
+        recipeNames.forEach((title) => {
+    
+        var li = document.createElement("li");
+        li.setAttribute('class', 'recipe_title');
+        li.setAttribute('data-title', title);
+        li.textContent = data[i].title;
+        mealBody.appendChild(li);
+      
+      
 
-        title.textContent = data[i].title;
+        // title.textContent = data[i].title;
 
-        recipeData.appendChild(title);
-        createRecipeRow.appendChild(recipeData);
-        mealBody.appendChild(createRecipeRow);
-      }
+        // recipeData.appendChild(title);
+        // li.appendChild(recipeData);
+        // mealListLi.appendChild(createRecipeRow);
+        
+      
     })
 
-    .catch((err) => console.error(err));
-
   console.log("hello");
+});
 }
 
 mealBtn.addEventListener("click", getMeal);
