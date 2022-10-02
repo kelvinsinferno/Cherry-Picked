@@ -42,10 +42,12 @@ function getMeal() {
       console.log(data);
       // for (var i = 0; i < data.length; i++) {
         recipeNames.forEach((title) => {
-    
+
         var li = document.createElement("li");
         li.setAttribute('class', 'recipe_title');
         li.setAttribute('data-title', title);
+        
+          
         li.textContent = data[i].title;
         mealBody.appendChild(li);
       
