@@ -72,3 +72,6 @@ textArea {
 button, input, optgroup, select, textarea {
     background-color: white;
 }
+.collapsible-header i {
+    background-color: white;
+}
