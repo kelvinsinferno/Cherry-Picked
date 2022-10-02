@@ -127,8 +127,12 @@ mealListLi.addEventListener("click", function(event) {
 //         // Element.appendChild
 //     }
 
-//     //collapsable goes here?
-// })
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.collapsible');
+  var instances = M.Collapsible.init(elems, options);
+  var instance = M.Collapsible.getInstance(elem);
+});
+
 
 //Cocktail
 function getCocktail() {
