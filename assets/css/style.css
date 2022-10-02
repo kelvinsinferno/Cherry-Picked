@@ -56,6 +56,9 @@ textArea {
     background-color: black;
 
 }
+.drinksSaved {
+    
+}
 /* .col {
     max-height: ;
 } */
@@ -70,5 +73,8 @@ textArea {
 
 }
 button, input, optgroup, select, textarea {
+    background-color: white;
+}
+.collapsible-header i {
     background-color: white;
 }
