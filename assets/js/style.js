@@ -18,6 +18,7 @@ var drinkUnfold = document.getElementById("drinkUnfold");
 var drinkBody = document.getElementById("drinkSection");
 var drinkAddBtn = document.getElementById("drinkAdd");
 var drinklistLi = document.querySelector("#drinkList");
+var drinkContainer = document.getElementById('drinks')
 var drinkList = [];
 
 //meal
@@ -180,28 +181,41 @@ function getCocktail() {
     .then(function (response) {
       return response.json();
     })
-    .then(function (data) {
-      console.log(data);
-      for (var i = 0; i < data.length; i++) {
-        var createDrinkRow = document.createElement("tr");
-        var drinkData = document.createElement("td");
-        var name = document.createElement("button");
+    .then(function (drinks) {
+      console.log(drinks);
 
-        name.textContent = data[i].name;
-        name.btn = data[i].name;
-
-        drinkData.appendChild(name);
-        createDrinkRow.appendChild(drinkData);
-        drinkBody.appendChild(createDrinkRow);
-      }
-    })
-
-    .catch((err) => console.error(err));
-
+      localStorage.setItem("drinkResults", JSON.stringify(drinks));
+      // for (var i = 0; i < data.length; i++) {
+        drinks.forEach((drinks, index) => {
+        var name = drinks.name;
+        var li = document.createElement("li");
+        li.textContent = name;
+        li.setAttribute("class", "drink_name");
+        li.setAttribute("data-name", name);
+        li.setAttribute("data-index", index);
+        drinkContainer.appendChild(li);
+        });
   console.log("drink");
+});
 }
 
 drinkBtn.addEventListener("click", getCocktail);
+
+drinkContainer.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  if (event.target.matches("li")) {
+    var getStorage = localStorage.getItem("drinkResults");
+    if (getStorage) {
+      var drinks = JSON.parse(getStorage);
+      var getIndex = event.target.dataset.index;
+      var getDrinkIngredients = drinks[getIndex].ingredients;
+      var getDrinkInstructions = drinks[getIndex].instructions;
+      console.log(getDrinkIngredients);
+      console.log(getDrinkInstructions);
+    }
+  }
+});
 
 //drinkBody eventListener
 drinkBody.addEventListener("click", (event) => {
