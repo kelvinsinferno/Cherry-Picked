@@ -6,10 +6,10 @@ var mealAddBtn = document.getElementById("mealAdd");
 var mealListLi = document.querySelector("#mealList");
 var recipeContainer = document.getElementById("recipes");
 var mealList = [];
-var mealTitle = document.getElementById("mealTitle");
 var recipeNames = [];
 var collapsibleRecipe = document.getElementById("collapsibleRecipe");
 var collapsibleIngredients = document.getElementById("collapsibleIngredients");
+var mealTitle = document.getElementById("mealTitle");
 
 var urlResponse = [];
 
@@ -22,6 +22,7 @@ var drinklistLi = document.querySelector("#drinkList");
 var drinkContainer = document.getElementById("drinks");
 var drinkIngredients = document.getElementById("drinkIngredients");
 var drinkRecipe = document.getElementById("drinkRecipe");
+var drinkTitle = document.getElementById("drinkTitle");
 var drinkList = [];
 
 //meal
@@ -64,6 +65,12 @@ function getMeal() {
     });
 }
 
+// title.textContent = data[i].title;
+
+// recipeData.appendChild(title);
+// li.appendChild(recipeData);
+// mealListLi.appendChild(createRecipeRow);
+
 mealBtn.addEventListener("click", getMeal);
 
 recipeContainer.addEventListener("click", function (event) {
@@ -84,14 +91,14 @@ recipeContainer.addEventListener("click", function (event) {
 
       var z = document.createElement("p");
       var y = document.createElement("p");
-      // var x = document.createElement('p');
+      var x = document.createElement("p");
 
       z.innerHTML = getRecipeIngredients;
       y.innerHTML = getRecipeInstructions;
-      // x.innerHTML = mealTitle;
+      x.innerHTML = meal;
       collapsibleIngredients.appendChild(z);
       collapsibleRecipe.appendChild(y);
-      mealTitle.textContent(meal);
+      mealTitle.appendChild(x);
     }
   }
 });
@@ -102,9 +109,7 @@ mealBody.addEventListener("click", (event) => {
   if (!mealChoice) {
     return;
   }
-
   console.dir(event.target.id);
-  mealTitle.innerHTML(mealChoice);
 });
 
 //Render Meal
@@ -217,18 +222,23 @@ drinkContainer.addEventListener("click", function (event) {
       var getIndex = event.target.dataset.index;
       var getDrinkIngredients = drinks[getIndex].ingredients;
       var getDrinkInstructions = drinks[getIndex].instructions;
+      var drink = drinks[getIndex].name;
       console.log(getDrinkIngredients);
       console.log(getDrinkInstructions);
+      console.log(drink);
 
       var z = document.createElement("p");
       var y = document.createElement("p");
+      var x = document.createElement("p");
       // var x = document.createElement('p');
 
       z.innerHTML = getDrinkIngredients;
       y.innerHTML = getDrinkInstructions;
+      x.innerHTML = drink;
       // x.innerHTML = mealTitle;
       drinkIngredients.appendChild(z);
       drinkRecipe.appendChild(y);
+      drinkTitle.appendChild(x);
     }
   }
 });
