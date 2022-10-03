@@ -65,12 +65,6 @@ function getMeal() {
     });
 }
 
-// title.textContent = data[i].title;
-
-// recipeData.appendChild(title);
-// li.appendChild(recipeData);
-// mealListLi.appendChild(createRecipeRow);
-
 mealBtn.addEventListener("click", getMeal);
 
 recipeContainer.addEventListener("click", function (event) {
@@ -143,7 +137,7 @@ function storeMeals() {
 
 //meal Add Button
 mealAddBtn.addEventListener("click", (event) => {
-  console.log("dicks");
+  console.log("mealAddBtn");
   var mealAdd = document.getElementById("mealText").value;
 
   renderMeal(mealAdd);
@@ -283,7 +277,7 @@ function storeDrinks(drinkAdd) {
 
 //Drink Add Button
 drinkAddBtn.addEventListener("click", (event) => {
-  console.log("dicks2");
+  console.log("drinkAddBtn");
   var drinkAdd = document.getElementById("drinkText").value;
 
   renderDrinks(drinkAdd);
