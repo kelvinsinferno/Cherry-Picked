@@ -4,13 +4,12 @@ var mealUnfold = document.getElementById("mealUnfold");
 var mealBody = document.getElementById("mealSection");
 var mealAddBtn = document.getElementById("mealAdd");
 var mealListLi = document.querySelector("#mealList");
-var recipeContainer = document.getElementById('recipes')
+var recipeContainer = document.getElementById("recipes");
 var mealList = [];
 var mealTitle = document.getElementById("mealTitle");
 var recipeNames = [];
-var collapsibleRecipe = document.getElementById("collapsibleRecipe")
-var collapsibleIngredients = document.getElementById("collapsibleIngredients")
-
+var collapsibleRecipe = document.getElementById("collapsibleRecipe");
+var collapsibleIngredients = document.getElementById("collapsibleIngredients");
 
 var urlResponse = [];
 
@@ -20,9 +19,9 @@ var drinkUnfold = document.getElementById("drinkUnfold");
 var drinkBody = document.getElementById("drinkSection");
 var drinkAddBtn = document.getElementById("drinkAdd");
 var drinklistLi = document.querySelector("#drinkList");
-var drinkContainer = document.getElementById('drinks')
-var drinkIngredients =document.getElementById('drinkIngredients')
-var drinkRecipe = document.getElementById('drinkRecipe')
+var drinkContainer = document.getElementById("drinks");
+var drinkIngredients = document.getElementById("drinkIngredients");
+var drinkRecipe = document.getElementById("drinkRecipe");
 var drinkList = [];
 
 //meal
@@ -64,16 +63,6 @@ function getMeal() {
       console.log("hello");
     });
 }
-      
-      
-
-        // title.textContent = data[i].title;
-
-        // recipeData.appendChild(title);
-        // li.appendChild(recipeData);
-        // mealListLi.appendChild(createRecipeRow);
-        
-      
 
 mealBtn.addEventListener("click", getMeal);
 
@@ -92,19 +81,17 @@ recipeContainer.addEventListener("click", function (event) {
       console.log(getRecipeIngredients);
       console.log(getRecipeInstructions);
       console.log(meal);
-     
-      var z = document.createElement('p'); 
-      var y = document.createElement('p');
+
+      var z = document.createElement("p");
+      var y = document.createElement("p");
       // var x = document.createElement('p');
 
-z.innerHTML = getRecipeIngredients;
-y.innerHTML = getRecipeInstructions;
-// x.innerHTML = mealTitle;
-collapsibleIngredients.appendChild(z);
-collapsibleRecipe.appendChild(y);
-mealTitle.textContent(meal);
-
-      
+      z.innerHTML = getRecipeIngredients;
+      y.innerHTML = getRecipeInstructions;
+      // x.innerHTML = mealTitle;
+      collapsibleIngredients.appendChild(z);
+      collapsibleRecipe.appendChild(y);
+      mealTitle.textContent(meal);
     }
   }
 });
@@ -115,14 +102,14 @@ mealBody.addEventListener("click", (event) => {
   if (!mealChoice) {
     return;
   }
-  
+
   console.dir(event.target.id);
-  mealTitle.innerHTML(mealChoice)
+  mealTitle.innerHTML(mealChoice);
 });
 
 //Render Meal
 function renderMeal(mealAdd) {
-//   console.log(mealAdd);
+  //   console.log(mealAdd);
   if (!mealAdd) return;
 
   mealListLi.innerHTML = "";
@@ -151,7 +138,7 @@ function storeMeals() {
 
 //meal Add Button
 mealAddBtn.addEventListener("click", (event) => {
-  console.log("dicks");
+  console.log("mealAddBtn");
   var mealAdd = document.getElementById("mealText").value;
 
   renderMeal(mealAdd);
@@ -159,29 +146,27 @@ mealAddBtn.addEventListener("click", (event) => {
 });
 
 //Delete list item
-mealListLi.addEventListener("click", function(event) {
-    var melement = event.target;
-  
-    // Checks if element is a button
-    if (melement.matches("button") === true) {
-      // Get its data-index value and remove the todo element from the list
-      var index = melement.parentElement.getAttribute("data-index");
-        mealList.splice(index, 1);
-        mealListLi.removeChild(mealListLi.childNodes[index]);
+mealListLi.addEventListener("click", function (event) {
+  var melement = event.target;
 
-      // Store updated todos in localStorage, re-render the list
-        storeMeals();
-        renderMeal();
-        
-    }
-  });
+  // Checks if element is a button
+  if (melement.matches("button") === true) {
+    // Get its data-index value and remove the todo element from the list
+    var index = melement.parentElement.getAttribute("data-index");
+    mealList.splice(index, 1);
+    mealListLi.removeChild(mealListLi.childNodes[index]);
 
-//collapsble
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.collapsible.expandable');
-  var instances = M.Collapsible.init(elems, { accordion: false });
+    // Store updated todos in localStorage, re-render the list
+    storeMeals();
+    renderMeal();
+  }
 });
 
+//collapsble
+document.addEventListener("DOMContentLoaded", function () {
+  var elems = document.querySelectorAll(".collapsible.expandable");
+  var instances = M.Collapsible.init(elems, { accordion: false });
+});
 
 //Cocktail
 function getCocktail() {
@@ -207,7 +192,7 @@ function getCocktail() {
 
       localStorage.setItem("drinkResults", JSON.stringify(drinks));
       // for (var i = 0; i < data.length; i++) {
-        drinks.forEach((drinks, index) => {
+      drinks.forEach((drinks, index) => {
         var name = drinks.name;
         var li = document.createElement("li");
         li.textContent = name;
@@ -215,9 +200,9 @@ function getCocktail() {
         li.setAttribute("data-name", name);
         li.setAttribute("data-index", index);
         drinkContainer.appendChild(li);
-        });
-  console.log("drink");
-});
+      });
+      console.log("drink");
+    });
 }
 
 drinkBtn.addEventListener("click", getCocktail);
@@ -235,18 +220,15 @@ drinkContainer.addEventListener("click", function (event) {
       console.log(getDrinkIngredients);
       console.log(getDrinkInstructions);
 
-      
-      var z = document.createElement('p'); 
-      var y = document.createElement('p');
+      var z = document.createElement("p");
+      var y = document.createElement("p");
       // var x = document.createElement('p');
 
-z.innerHTML = getDrinkIngredients;
-y.innerHTML = getDrinkInstructions;
-// x.innerHTML = mealTitle;
-drinkIngredients.appendChild(z);
-drinkRecipe.appendChild(y);
-
-
+      z.innerHTML = getDrinkIngredients;
+      y.innerHTML = getDrinkInstructions;
+      // x.innerHTML = mealTitle;
+      drinkIngredients.appendChild(z);
+      drinkRecipe.appendChild(y);
     }
   }
 });
@@ -291,7 +273,7 @@ function storeDrinks(drinkAdd) {
 
 //Drink Add Button
 drinkAddBtn.addEventListener("click", (event) => {
-  console.log("dicks2");
+  console.log("drinkAddBtn");
   var drinkAdd = document.getElementById("drinkText").value;
 
   renderDrinks(drinkAdd);
@@ -299,23 +281,21 @@ drinkAddBtn.addEventListener("click", (event) => {
 });
 
 //Delete item
-drinklistLi.addEventListener("click", function(event) {
-    var delement = event.target;
-  
-    // Checks if element is a button
-    if (delement.matches("button") === true) {
-      // Get its data-index value and remove the todo element from the list
-      var index = delement.parentElement.getAttribute("data-index");
-        drinkList.splice(index, 1);
-        drinklistLi.removeChild(drinklistLi.childNodes[index]);
+drinklistLi.addEventListener("click", function (event) {
+  var delement = event.target;
 
-      // Store updated todos in localStorage, re-render the list
-        storeDrinks();
-        renderMeal();
-        
-    }
-  });
+  // Checks if element is a button
+  if (delement.matches("button") === true) {
+    // Get its data-index value and remove the todo element from the list
+    var index = delement.parentElement.getAttribute("data-index");
+    drinkList.splice(index, 1);
+    drinklistLi.removeChild(drinklistLi.childNodes[index]);
 
+    // Store updated todos in localStorage, re-render the list
+    storeDrinks();
+    renderMeal();
+  }
+});
 
 //get items from local storage on page load
 function init() {
@@ -332,6 +312,4 @@ function init() {
   renderDrinks();
 }
 
-
 init();
-
