@@ -10,6 +10,9 @@ h1 {
     color: black;
     padding: 20px;
 }
+h1:hover {
+    color: red;
+}
 
 .logo{
     text-align: center;
@@ -28,6 +31,10 @@ textArea {
     resize: none;
 }
 
+textArea:hover {
+    border: solid 1px red;
+}
+
 .btn {
    
     background-color:black;
@@ -43,6 +50,9 @@ textArea {
    
     color: black;
 }
+.mealIngredient:hover {
+    color: red;
+}
 .mealText {
     align-items: center;
     padding: 10px;
@@ -53,6 +63,9 @@ textArea {
     align-items: center;
     color: black
 
+}
+.drink:hover {
+    color: red;
 }
 
 .drinkText {
@@ -92,4 +105,19 @@ button, input, optgroup, select, textarea {
 .collapsible {
     width: 95%;
     border: solid 1px black;
+}
+
+.collapsible:hover {
+    border: solid 1px red;
+}
+
+.saved:hover {
+    color: red;
+}
+
+#mealList:hover {
+    color: red;
+}
+#drinkList:hover {
+    color: red;
 }

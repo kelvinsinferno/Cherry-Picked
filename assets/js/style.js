@@ -49,6 +49,7 @@ function getMeal() {
       recipes.forEach((recipe, index) => {
         var title = recipe.title;
         var li = document.createElement("li");
+
         li.textContent = title;
         li.setAttribute("class", "recipe_title");
         li.setAttribute("data-title", title);
