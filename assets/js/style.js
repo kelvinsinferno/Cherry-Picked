@@ -65,12 +65,6 @@ function getMeal() {
     });
 }
 
-// title.textContent = data[i].title;
-
-// recipeData.appendChild(title);
-// li.appendChild(recipeData);
-// mealListLi.appendChild(createRecipeRow);
-
 mealBtn.addEventListener("click", getMeal);
 
 recipeContainer.addEventListener("click", function (event) {
