@@ -13,4 +13,8 @@ GIVEN I want recipes for meals and drinks WHEN I open Cherry Picked website THEN
 
 ## Deployed Site
 
-https://kelvinsinferno.github.io/Project1/
+https://kelvinsinferno.github.io/Cherry-Picked/
+
+## Repository
+
+https://github.com/kelvinsinferno/Cherry-Picked
