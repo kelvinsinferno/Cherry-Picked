@@ -9,3 +9,7 @@ We built this website for a simpler way to find meal and drink recipes. Once on 
 ## Acceptance Criteria
 
 GIVEN I want recipes for meals and drinks WHEN I open Cherry Picked website THEN I am shown a meal and drink search bar WHEN I see the search bars I enter ingredients THEN I am shown recipes for the picked ingredient 
+
+## Deployed Site
+
+https://kelvinsinferno.github.io/Project1/
